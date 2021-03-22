@@ -11,8 +11,9 @@ _Welcome to MyReads udacity's React Nanodegree project.
  2. start the development server with npm start
     
 # The provided file BooksAPI.js contains the methods you will need it :
- 1.getAll
- 2.search
- 3.update
+
+ 1. getAll
+ 2. search
+ 3. update
    
  # The project made with React and React Router.  
