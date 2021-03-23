@@ -1,4 +1,4 @@
-# udacity-project.
+# Udacity Project.
 > Welcome to MyReads udacity's React Nanodegree project.
 
 ### The main task of this React project are the following:
