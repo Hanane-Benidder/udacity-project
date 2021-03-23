@@ -16,11 +16,13 @@ class BooksApp extends React.Component {
       this.setState({ books });
     });
   }
-  handlechange = (book, shelf) => {
-    BooksAPI.update(book, shelf);
+  refreshBooks = () => {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
     });
+  };
+  handlechange = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => this.refreshBooks());
   };
   render() {
     return (
