@@ -16,7 +16,9 @@
 
 ### Search Page :
 > the user types into the search field, books that match the query are displayed on the page.
+
 > Search results on the search page allow the user to select “currently reading”, “want to read”, or “read” to place the book in a certain shelf.
+
 > The books that was added in the search page will be added to the main page.
 
 ### Routing :
