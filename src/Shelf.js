@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import Book from "./Book";
 import Home from "./Home";
 import App from "./App";
+
 class Shelf extends Component {
   render() {
     const { books, handlechange } = this.props;
+    const shelves = [
+      { title: "Read", key: "read" },
+      { title: "Want To Read", key: "wantToRead" },
+      { title: "Currently Reading", key: "currentlyReading" },
+    ];
 
     return (
       <div className="bookshelf">
@@ -12,13 +18,13 @@ class Shelf extends Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {this.props.books
-              .filter((book) => book.shelf === "currentlyReading")
+              .filter((book) => book.shelf === shelves[2].key)
               .map((book) => (
                 <li key={book.id}>
                   <Book
                     book={book}
                     handlechange={handlechange}
-                    currentSlf="currentlyReading"
+                    currentSlf={shelves[2].key}
                   />
                 </li>
               ))}
@@ -29,13 +35,13 @@ class Shelf extends Component {
           <div className="bookshelf-books">
             <ol className="books-grid">
               {this.props.books
-                .filter((book) => book.shelf === "wantToRead")
+                .filter((book) => book.shelf === shelves[1].key)
                 .map((book) => (
                   <li key={book.id}>
                     <Book
                       book={book}
                       handlechange={handlechange}
-                      currentSlf="wantToRead"
+                      currentSlf={shelves[1].key}
                     />
                   </li>
                 ))}
@@ -46,13 +52,13 @@ class Shelf extends Component {
             <div className="bookshelf-books">
               <ol className="books-grid">
                 {this.props.books
-                  .filter((book) => book.shelf === "read")
+                  .filter((book) => book.shelf === shelves[0].key)
                   .map((book) => (
                     <li key={book.id}>
                       <Book
                         book={book}
                         handlechange={handlechange}
-                        currentSlf="read"
+                        currentSlf={shelves[0].key}
                       />
                     </li>
                   ))}
@@ -64,5 +70,6 @@ class Shelf extends Component {
     );
   }
 }
+
 
 export default Shelf;
